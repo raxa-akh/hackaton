@@ -4,7 +4,6 @@ import DeliveryCard from '../components/DeliveryCard/DeliveryCard';
 import Header from '../components/HeaderComponent/Header';
 import cls from "../styles/Dashboard.module.css"
 import style from '../modal/modalOptions.module.css'
-import MainModal from '../modal/MainModal';
 
 
 

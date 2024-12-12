@@ -29,6 +29,7 @@ export const logout = async () => {
     await api.post('/logout');
 };
 
+
 export const registerAdmin = async (registrationData) => {
     const response = await api.post('/register', registrationData);
     return response.data;
