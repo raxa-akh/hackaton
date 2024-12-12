@@ -23,6 +23,103 @@
 .dropdownContainer{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     margin-bottom: 10px;
+}
+
+.dropdownContainer div label{
+    margin-right: 10px;
+}
+
+.dropdownContainer div select{
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #ccc;
+}
+
+.dropdownContainer button{
+    /* margin-top: 10px; */
+    padding: 6px 10px;
+    border: 2px solid #dc3b3b;
+    background-color: #fdfdfd;
+    color: #dc3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdownContainer button:hover{
+    background-color: #dc3b3b;
+    color: #fff;
+}
+
+
+/*  ///////////////////////////*/
+
+.gridContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    position: relative;
+
+    max-width: 700px;
+    width: 100%;
+}
+
+.grid {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px;
+}
+
+
+
+.rowLabel {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.cell {
+    background-color: #add8e6;
+    cursor: pointer;
+    position: relative;
+}
+
+.cell:hover {
+    background-color: #87ceeb;
+}
+
+.selected {
+    background-color: #4682b4;
+    color: #fff;
+}
+
+.highlight {
+    width: 100%;
+    height: 100%;
+    background-color: #4682b4;
+}
+
+.tooltip {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.selectedInfo {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
 }

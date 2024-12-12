@@ -24,7 +24,7 @@ function Header() {
         <header className={cls.header}>
             <div className={cls.container}>
                 <nav className={cls.nav}>
-                    <div className={cls.nav_logo}><img alt="" src={logo} />MedChain</div>
+                    <Link to={'/mainPage'}><div className={cls.nav_logo}><img alt="" src={logo} />MedChain</div></Link>
                     <div className={cls.nav_links}>
                         <Link to={'/raiting'} className={cls.nav_link}>Склады</Link>
                         <Link to={'/dashboard'} className={cls.nav_link}>Работники</Link>
