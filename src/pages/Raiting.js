@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cls from "../styles/Raiting.module.css";
+import Header from "../components/HeaderComponent/Header";
 
 const Raiting = () => {
     const [selectedWarehouse, setSelectedWarehouse] = useState(null);
@@ -19,113 +20,96 @@ const Raiting = () => {
         quantity: Math.floor(Math.random() * 100),
     }));
 
-    const handleWarehouseSelect = (warehouse) => {
-        if (selectedWarehouse?.id === warehouse.id) {
-            setSelectedWarehouse(null);
-            setSelectedRow(null);
+    const handleWarehouseSelect = (warehouseId) => {
+        if (selectedWarehouse?.id !== warehouseId) {
+            setSelectedWarehouse(warehouses.find(w => w.id === warehouseId));
+            setSelectedRow(null); // Reset row selection if warehouse changes
         } else {
-            setSelectedWarehouse(warehouse);
+            setSelectedWarehouse(null);
             setSelectedRow(null);
         }
     };
 
-    const handleRowSelect = (row) => {
-        if (selectedRow?.id === row.id) {
-            setSelectedRow(null);
-        } else {
-            setSelectedRow(row);
-        }
+    const handleRowSelect = (rowId) => {
+        if (!selectedWarehouse) return; // Prevent row selection without warehouse
+        setSelectedRow(selectedRow?.id === rowId ? null : rows.find(r => r.id === rowId));
     };
 
     return (
-        <div className={cls.container}>
-            <main className={cls.main}></main>
+        <div>
+            <Header/>
+            <main className={cls.main}>
+                <div className={cls.container}>
                 <h1>Warehouse Management</h1>
 
-                {/* Warehouse Selection */}
-                <div className={cls.warehouseSelection}>
-                    {warehouses.map((warehouse) => (
-                        selectedWarehouse && selectedWarehouse.id !== warehouse.id ? null : (
-                            <div
-                                key={warehouse.id}
-                                className={`${cls.warehouse} ${
-                                    selectedWarehouse?.id === warehouse.id ? cls.selected : ""
-                                }`}
-                                onClick={() => handleWarehouseSelect(warehouse)}
+                    {/* Warehouse Dropdown */}
+                    <div className={cls.dropdownContainer}>
+                        <label htmlFor="warehouseSelect">Select Warehouse:</label>
+                        <select
+                            id="warehouseSelect"
+                            value={selectedWarehouse?.id || ""}
+                            onChange={(e) => handleWarehouseSelect(Number(e.target.value))}
+                        >
+                            <option value="" disabled>Select a warehouse</option>
+                            {warehouses.map((warehouse) => (
+                                <option key={warehouse.id} value={warehouse.id}>{warehouse.name}</option>
+                            ))}
+                        </select>
+                        {selectedWarehouse && (
+                            <button className={cls.deselectButton} onClick={() => handleWarehouseSelect(selectedWarehouse.id)}>
+                                Deselect Warehouse
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Row Dropdown */}
+                    {selectedWarehouse && (
+                        <div className={cls.dropdownContainer}>
+                            <label htmlFor="rowSelect">Select Row:</label>
+                            <select
+                                id="rowSelect"
+                                value={selectedRow?.id || ""}
+                                onChange={(e) => handleRowSelect(Number(e.target.value))}
                             >
-                                {warehouse.name}
-                                {selectedWarehouse?.id === warehouse.id && (
-                                    <button
-                                        className={cls.deselectButton}
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            setSelectedWarehouse(null);
-                                            setSelectedRow(null);
-                                        }}
-                                    >
-                                        Deselect
-                                    </button>
-                                )}
-                            </div>
-                        )
-                    ))}
-                </div>
-
-                {/* Row Selection */}
-                {selectedWarehouse && (
-                    <div className={cls.rowSelection}>
-                        <h2>Rows in {selectedWarehouse.name}</h2>
-                        {rows.map((row) => (
-                            selectedRow && selectedRow.id !== row.id ? null : (
-                                <div
-                                    key={row.id}
-                                    className={`${cls.row} ${
-                                        selectedRow?.id === row.id ? cls.selected : ""
-                                    }`}
-                                    onClick={() => handleRowSelect(row)}
-                                >
-                                    {row.name}
-                                    {selectedRow?.id === row.id && (
-                                        <button
-                                            className={cls.deselectButton}
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                setSelectedRow(null);
-                                            }}
-                                        >
-                                            Deselect
-                                        </button>
-                                    )}
-                                </div>
-                            )
-                        ))}
-                    </div>
-                )}
-
-                {/* Cells Table */}
-                {selectedRow && (
-                    <div className={cls.cellTable}>
-                        <h2>Cells in {selectedRow.name}</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Cell ID</th>
-                                    <th>Content</th>
-                                    <th>Quantity</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {cells.map((cell) => (
-                                    <tr key={cell.id}>
-                                        <td>{cell.id}</td>
-                                        <td>{cell.content}</td>
-                                        <td>{cell.quantity}</td>
-                                    </tr>
+                                <option value="" disabled>Select a row</option>
+                                {rows.map((row) => (
+                                    <option key={row.id} value={row.id}>{row.name}</option>
                                 ))}
-                            </tbody>
-                        </table>
-                    </div>
-                )}
+                            </select>
+                            {selectedRow && (
+                                <button className={cls.deselectButton} onClick={() => setSelectedRow(null)}>
+                                    Deselect Row
+                                </button>
+                            )}
+                        </div>
+                    )}
+
+                    {/* Cells Table */}
+                    {selectedRow && (
+                        <div className={cls.cellTable}>
+                            <h2>Cells in {selectedRow.name}</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cell ID</th>
+                                        <th>Content</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {cells.map((cell) => (
+                                        <tr key={cell.id}>
+                                            <td>{cell.id}</td>
+                                            <td>{cell.content}</td>
+                                            <td>{cell.quantity}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}                
+                </div>
+            </main>  
         </div>
     );
 };

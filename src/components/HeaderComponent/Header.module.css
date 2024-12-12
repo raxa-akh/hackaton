@@ -31,7 +31,8 @@
 .nav_logo img{
     object-fit: cover;
     display: block;
-    width: 50px;
+    width: 40px;
+    margin-right: 5px;
 
 }
 

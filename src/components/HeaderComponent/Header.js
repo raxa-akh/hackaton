@@ -24,10 +24,10 @@ function Header() {
         <header className={cls.header}>
             <div className={cls.container}>
                 <nav className={cls.nav}>
-                    <div className={cls.nav_logo}><img alt="" src={logo} /> ВремяВместе</div>
+                    <div className={cls.nav_logo}><img alt="" src={logo} />MedChain</div>
                     <div className={cls.nav_links}>
-                        <Link to={'/raiting'} className={cls.nav_link}>Я</Link>
-                        <Link to={'/dashboard'} className={cls.nav_link}>Задания</Link>
+                        <Link to={'/raiting'} className={cls.nav_link}>Склады</Link>
+                        <Link to={'/dashboard'} className={cls.nav_link}>Работники</Link>
                         <button onClick={() => handleLogout()} className={  cls.nav_btn}>Выйти</button>
                     </div>
                 </nav>
