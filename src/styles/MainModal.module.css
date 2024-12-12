@@ -1,0 +1,36 @@
+.dialog{
+    border: none;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.dialog:focus{
+    outline: none;
+}
+
+.dialog::backdrop{
+    background-color: rgba(0,0,0,0.5);
+}
+
+.closeBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.closeBtn img{
+    cursor: pointer;
+    
+}
+
+.closeTitle{
+    font-size: 25px;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    vertical-align: top;
+    /* margin-left: 10px; */
+}
