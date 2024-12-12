@@ -1,6 +1,7 @@
 
 import DeliveryCard from '../components/DeliveryCard/DeliveryCard';
 import Header from '../components/HeaderComponent/Header';
+import MainModal from '../modal/MainModal';
 import cls from "../styles/Dashboard.module.css"
 
 
@@ -12,7 +13,7 @@ const Dashboard = () => {
             id: 1,
             date: '2024-12-01',
             quantity: 50,
-            loaderName: 'Иван Петров',
+            loaderName: 'Иван Петров, Алексей',
             isCompleted: 'true'
         },
         {
@@ -72,6 +73,10 @@ const Dashboard = () => {
             </table>
             </div>
             </main>
+
+            <MainModal>
+                
+            </MainModal>
         </div>
     );
 };

@@ -23,7 +23,7 @@ const Raiting = () => {
     const handleWarehouseSelect = (warehouseId) => {
         if (selectedWarehouse?.id !== warehouseId) {
             setSelectedWarehouse(warehouses.find(w => w.id === warehouseId));
-            setSelectedRow(null); // Reset row selection if warehouse changes
+            setSelectedRow(null); 
         } else {
             setSelectedWarehouse(null);
             setSelectedRow(null);
@@ -31,7 +31,7 @@ const Raiting = () => {
     };
 
     const handleRowSelect = (rowId) => {
-        if (!selectedWarehouse) return; // Prevent row selection without warehouse
+        if (!selectedWarehouse) return; 
         setSelectedRow(selectedRow?.id === rowId ? null : rows.find(r => r.id === rowId));
     };
 
@@ -40,50 +40,54 @@ const Raiting = () => {
             <Header/>
             <main className={cls.main}>
                 <div className={cls.container}>
-                <h1>Warehouse Management</h1>
-
-                    {/* Warehouse Dropdown */}
-                    <div className={cls.dropdownContainer}>
-                        <label htmlFor="warehouseSelect">Select Warehouse:</label>
-                        <select
-                            id="warehouseSelect"
-                            value={selectedWarehouse?.id || ""}
-                            onChange={(e) => handleWarehouseSelect(Number(e.target.value))}
-                        >
-                            <option value="" disabled>Select a warehouse</option>
-                            {warehouses.map((warehouse) => (
-                                <option key={warehouse.id} value={warehouse.id}>{warehouse.name}</option>
-                            ))}
-                        </select>
-                        {selectedWarehouse && (
-                            <button className={cls.deselectButton} onClick={() => handleWarehouseSelect(selectedWarehouse.id)}>
-                                Deselect Warehouse
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Row Dropdown */}
-                    {selectedWarehouse && (
+                    <h1>Warehouse Management</h1>
+                    <div className={cls.selectContainer}>
+                        {/* Warehouse Dropdown */}
                         <div className={cls.dropdownContainer}>
-                            <label htmlFor="rowSelect">Select Row:</label>
-                            <select
-                                id="rowSelect"
-                                value={selectedRow?.id || ""}
-                                onChange={(e) => handleRowSelect(Number(e.target.value))}
-                            >
-                                <option value="" disabled>Select a row</option>
-                                {rows.map((row) => (
-                                    <option key={row.id} value={row.id}>{row.name}</option>
-                                ))}
-                            </select>
-                            {selectedRow && (
-                                <button className={cls.deselectButton} onClick={() => setSelectedRow(null)}>
-                                    Deselect Row
+                            <div>
+                                <label htmlFor="warehouseSelect">Select Warehouse:</label>
+                                <select
+                                    id="warehouseSelect"
+                                    value={selectedWarehouse?.id || ""}
+                                    onChange={(e) => handleWarehouseSelect(Number(e.target.value))}
+                                >
+                                    <option value="" disabled>Select a warehouse</option>
+                                    {warehouses.map((warehouse) => (
+                                        <option key={warehouse.id} value={warehouse.id}>{warehouse.name}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            {selectedWarehouse && (
+                                <button className={cls.deselectButton} onClick={() => handleWarehouseSelect(selectedWarehouse.id)}>
+                                    Deselect Warehouse
                                 </button>
                             )}
                         </div>
-                    )}
 
+                        {/* Row Dropdown */}
+                        {selectedWarehouse && (
+                            <div className={cls.dropdownContainer}>
+                                <div>
+                                    <label htmlFor="rowSelect">Select Row:</label>
+                                    <select
+                                        id="rowSelect"
+                                        value={selectedRow?.id || ""}
+                                        onChange={(e) => handleRowSelect(Number(e.target.value))}
+                                    >
+                                        <option value="" disabled>Select a row</option>
+                                        {rows.map((row) => (
+                                            <option key={row.id} value={row.id}>{row.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                {selectedRow && (
+                                    <button className={cls.deselectButton} onClick={() => setSelectedRow(null)}>
+                                        Deselect Row
+                                    </button>
+                                )}
+                            </div>
+                        )}
+                    </div>
                     {/* Cells Table */}
                     {selectedRow && (
                         <div className={cls.cellTable}>
