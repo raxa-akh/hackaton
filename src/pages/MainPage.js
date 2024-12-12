@@ -1,9 +1,10 @@
+import Header from "../components/HeaderComponent/Header";
 
 
 function MainPage(){
     return(
-        <div>
-            Main page
+        <div className={''}>
+            <Header/>
         </div>
     )
 }

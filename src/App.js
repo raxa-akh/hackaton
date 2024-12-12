@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { setUser } from './redux/slices/authSlice';
 import "./App.css";
 import LoginForm from './pages/LoginForm';
+import MainPage from './pages/MainPage';
 import Dashboard from './pages/Dashboard';
 import Raiting from './pages/Raiting';
 import RegisterForm from './pages/RegisterForm';
@@ -28,7 +29,7 @@ const App = () => {
                     path="/login"
                     element={
                         isAuthenticated ? (
-                            <Navigate to="/dashboard" replace />
+                            <Navigate to="/mainPage" replace />
                         ) : (
                             <LoginForm />
                         )
@@ -38,7 +39,7 @@ const App = () => {
                     path="/register"
                     element={
                         isAuthenticated ? (
-                            <Navigate to="/dashboard" replace />
+                            <Navigate to="/mainPage" replace />
                         ) : (
                             <RegisterForm />
                         )
@@ -59,6 +60,16 @@ const App = () => {
                     element={
                         isAuthenticated ? (
                             <Raiting/>
+                        ) : (
+                            <Navigate to="/login" replace />
+                        )
+                    }
+                />
+                <Route
+                    path="/mainPage"
+                    element={
+                        isAuthenticated ? (
+                            <MainPage/>
                         ) : (
                             <Navigate to="/login" replace />
                         )
