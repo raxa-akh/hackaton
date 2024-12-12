@@ -49,7 +49,9 @@ const Dashboard = () => {
         <div>
             <Header/>
 
-            <h2>Таблица поставок</h2>
+            <main className={cls.main} >
+                <div className={cls.container}>
+                <h2>Таблица поставок</h2>
             <table id="deliveriesTable">
                 <thead>
                     <tr>
@@ -68,6 +70,8 @@ const Dashboard = () => {
                     }
                 </tbody>
             </table>
+            </div>
+            </main>
         </div>
     );
 };
