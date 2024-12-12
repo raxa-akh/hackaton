@@ -39,56 +39,27 @@ const Raiting = () => {
 
     return (
         <div className={cls.container}>
-            <h1>Warehouse Management</h1>
+            <main className={cls.main}></main>
+                <h1>Warehouse Management</h1>
 
-            {/* Warehouse Selection */}
-            <div className={cls.warehouseSelection}>
-                {warehouses.map((warehouse) => (
-                    selectedWarehouse && selectedWarehouse.id !== warehouse.id ? null : (
-                        <div
-                            key={warehouse.id}
-                            className={`${cls.warehouse} ${
-                                selectedWarehouse?.id === warehouse.id ? cls.selected : ""
-                            }`}
-                            onClick={() => handleWarehouseSelect(warehouse)}
-                        >
-                            {warehouse.name}
-                            {selectedWarehouse?.id === warehouse.id && (
-                                <button
-                                    className={cls.deselectButton}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setSelectedWarehouse(null);
-                                        setSelectedRow(null);
-                                    }}
-                                >
-                                    Deselect
-                                </button>
-                            )}
-                        </div>
-                    )
-                ))}
-            </div>
-
-            {/* Row Selection */}
-            {selectedWarehouse && (
-                <div className={cls.rowSelection}>
-                    <h2>Rows in {selectedWarehouse.name}</h2>
-                    {rows.map((row) => (
-                        selectedRow && selectedRow.id !== row.id ? null : (
+                {/* Warehouse Selection */}
+                <div className={cls.warehouseSelection}>
+                    {warehouses.map((warehouse) => (
+                        selectedWarehouse && selectedWarehouse.id !== warehouse.id ? null : (
                             <div
-                                key={row.id}
-                                className={`${cls.row} ${
-                                    selectedRow?.id === row.id ? cls.selected : ""
+                                key={warehouse.id}
+                                className={`${cls.warehouse} ${
+                                    selectedWarehouse?.id === warehouse.id ? cls.selected : ""
                                 }`}
-                                onClick={() => handleRowSelect(row)}
+                                onClick={() => handleWarehouseSelect(warehouse)}
                             >
-                                {row.name}
-                                {selectedRow?.id === row.id && (
+                                {warehouse.name}
+                                {selectedWarehouse?.id === warehouse.id && (
                                     <button
                                         className={cls.deselectButton}
                                         onClick={(e) => {
                                             e.stopPropagation();
+                                            setSelectedWarehouse(null);
                                             setSelectedRow(null);
                                         }}
                                     >
@@ -99,32 +70,62 @@ const Raiting = () => {
                         )
                     ))}
                 </div>
-            )}
 
-            {/* Cells Table */}
-            {selectedRow && (
-                <div className={cls.cellTable}>
-                    <h2>Cells in {selectedRow.name}</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Cell ID</th>
-                                <th>Content</th>
-                                <th>Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {cells.map((cell) => (
-                                <tr key={cell.id}>
-                                    <td>{cell.id}</td>
-                                    <td>{cell.content}</td>
-                                    <td>{cell.quantity}</td>
+                {/* Row Selection */}
+                {selectedWarehouse && (
+                    <div className={cls.rowSelection}>
+                        <h2>Rows in {selectedWarehouse.name}</h2>
+                        {rows.map((row) => (
+                            selectedRow && selectedRow.id !== row.id ? null : (
+                                <div
+                                    key={row.id}
+                                    className={`${cls.row} ${
+                                        selectedRow?.id === row.id ? cls.selected : ""
+                                    }`}
+                                    onClick={() => handleRowSelect(row)}
+                                >
+                                    {row.name}
+                                    {selectedRow?.id === row.id && (
+                                        <button
+                                            className={cls.deselectButton}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSelectedRow(null);
+                                            }}
+                                        >
+                                            Deselect
+                                        </button>
+                                    )}
+                                </div>
+                            )
+                        ))}
+                    </div>
+                )}
+
+                {/* Cells Table */}
+                {selectedRow && (
+                    <div className={cls.cellTable}>
+                        <h2>Cells in {selectedRow.name}</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cell ID</th>
+                                    <th>Content</th>
+                                    <th>Quantity</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            )}
+                            </thead>
+                            <tbody>
+                                {cells.map((cell) => (
+                                    <tr key={cell.id}>
+                                        <td>{cell.id}</td>
+                                        <td>{cell.content}</td>
+                                        <td>{cell.quantity}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
         </div>
     );
 };
