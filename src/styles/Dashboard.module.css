@@ -75,3 +75,175 @@
     width: 60%;
 
 }
+
+
+/* Main container styles */
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styles */
+.header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Table styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f4f4f4;
+}
+
+/* Button styles */
+.tableBtn, .modalBtn, .modalBtn1, .buttonHeader {
+    background-color: #3d108b;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    max-height: 40px;
+    transition: all 0.2s linear;
+}
+
+.buttonHeader:hover, .tableBtn:hover, .modalBtn1:hover {
+    background-color: #08155b;
+}
+
+.modalBtn {
+    background-color: rgb(188, 44, 44);
+}
+
+.modalBtn:hover {
+    background-color: rgb(143, 10, 10);
+}
+
+/* Modal field styles */
+.fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modalInput {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.modalBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.modalLabel {
+    width: 60%;
+}
+
+/* Responsive styles for tablets and mobile devices */
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+
+    .table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttonHeader {
+        width: 100%;
+    }
+
+    .modalInput {
+        max-width: 100%;
+    }
+
+    .modalBtns {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Styles for small screens (phones) */
+@media (max-width: 480px) {
+    .table th, .table td {
+        padding: 6px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .fields {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .modalInput {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .modalBtns {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modalLabel {
+        width: 80%;
+    }
+
+    .buttonHeader {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .tableBtn, .modalBtn, .modalBtn1 {
+        font-size: 14px;
+    }
+}

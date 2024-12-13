@@ -113,6 +113,8 @@ const Dashboard = () => {
                 </div>
             </main>
 
+            
+
             {open && selectedDelivery && (
                 <MainModal ref={modalRef} title={`Назначение грузчиков: Поставка ${selectedDelivery.id}`} modalClose={handleClose}>
                     {selectedLoader.map((loader) => (

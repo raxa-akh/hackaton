@@ -8,6 +8,7 @@ import MainPage from './pages/MainPage';
 import Dashboard from './pages/Dashboard';
 import Raiting from './pages/Raiting';
 import RegisterForm from './pages/RegisterForm';
+import Analitycs from './pages/Analitycs';
 
 const App = () => {
     const dispatch = useDispatch();
@@ -50,6 +51,16 @@ const App = () => {
                     element={
                         isAuthenticated ? (
                             <Dashboard />
+                        ) : (
+                            <Navigate to="/login" replace />
+                        )
+                    }
+                />
+                <Route
+                    path="/analitycs"
+                    element={
+                        isAuthenticated ? (
+                            <Analitycs />
                         ) : (
                             <Navigate to="/login" replace />
                         )

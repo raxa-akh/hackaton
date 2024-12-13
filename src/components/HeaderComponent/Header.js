@@ -27,7 +27,8 @@ function Header() {
                     <Link to={'/mainPage'}><div className={cls.nav_logo}><img alt="" src={logo} />MedChain</div></Link>
                     <div className={cls.nav_links}>
                         <Link to={'/raiting'} className={cls.nav_link}>Склады</Link>
-                        <Link to={'/dashboard'} className={cls.nav_link}>Работники</Link>
+                        <Link to={'/dashboard'} className={cls.nav_link}>Поставки</Link>
+                        <Link to={'/analitycs'} className={cls.nav_link}>Аналитика</Link>
                         <button onClick={() => handleLogout()} className={  cls.nav_btn}>Выйти</button>
                     </div>
                 </nav>
