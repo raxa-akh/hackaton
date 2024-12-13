@@ -62,7 +62,7 @@ const SellerAnalyticsChart = () => {
       },
       tooltip: {
         callbacks: {
-          label: (context) => `Sales: ${context.raw}`,
+          label: (context) => `Товары: ${context.raw}`,
         },
       },
     },
@@ -102,6 +102,25 @@ const SellerAnalyticsChart = () => {
           </div>
         </label>
       </div>
+
+      <div
+        style={{
+          maxHeight: checkboxState.checkbox1 ? '200px' : '0px',
+          opacity: checkboxState.checkbox1 ? 1 : 0,
+          overflow: 'hidden',
+          transition: 'max-height 0.5s ease, opacity 0.5s ease',
+          backgroundColor: '#f9f9f9',
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+          padding: checkboxState.checkbox1 ? '20px' : '0px',
+          marginBottom: '20px',
+        }}
+      >
+        <h3 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Детальная информация</h3>
+        <p>В этом месяце было отправлено 650 товаров. Общая выручка составила 120,000 рублей.</p>
+        <p>Самый успешный месяц: июнь с 700 отправлениями.</p>
+      </div>
+
       <Line data={data} options={options} />
       <style>
         {`
@@ -123,7 +142,7 @@ const SellerAnalyticsChart = () => {
             transition: background-color 0.3s, transform 0.3s;
           }
           .checkbox-container input[type="checkbox"]:checked {
-            background-color: #4caf50;
+            background-color: rgb(76, 78, 175);
           }
           .checkbox-container input[type="checkbox"]:checked::before {
             content: '';
@@ -154,7 +173,7 @@ const SellerAnalyticsChart = () => {
             color: #333;
           }
           .checkbox-container input[type="checkbox"]:hover {
-            background-color: #66bb6a;
+            background-color: rgb(76, 78, 175);
             transform: scale(1.05);
           }
           .checkbox-label {

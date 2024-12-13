@@ -62,7 +62,7 @@ const Statistics2 = () => {
       },
       tooltip: {
         callbacks: {
-          label: (context) => `Sales: ${context.raw}`,
+          label: (context) => `Товары: ${context.raw}`,
         },
       },
     },
@@ -102,8 +102,25 @@ const Statistics2 = () => {
           </div>
         </label>
       </div>
-      <div style={{ height: '40px' }}></div>
-      
+
+      <div
+        style={{
+          maxHeight: checkboxState.checkbox1 ? '300px' : '0',
+          opacity: checkboxState.checkbox1 ? '1' : '0',
+          overflow: 'hidden',
+          backgroundColor: '#f9f9f9',
+          border: checkboxState.checkbox1 ? '1px solid #ddd' : 'none',
+          borderRadius: '8px',
+          padding: checkboxState.checkbox1 ? '20px' : '0 20px',
+          marginBottom: checkboxState.checkbox1 ? '20px' : '0',
+          transition: 'all 0.3s ease',
+        }}
+      >
+        <h3 style={{ fontSize: '1.2rem', marginBottom: '10px' }}>Детальная информация</h3>
+        <p>За последние 7 месяцев было принято 700 товаров. Среднее количество принятых товаров в месяц составляет 550.</p>
+        <p>Самый активный месяц: июль с 700 принятыми товарами.</p>
+      </div>
+
       <Line data={dataAlternate} options={options} />
       <style>
         {`
@@ -125,7 +142,7 @@ const Statistics2 = () => {
             transition: background-color 0.3s, transform 0.3s;
           }
           .checkbox-container input[type="checkbox"]:checked {
-            background-color: #4caf50;
+            background-color: rgb(76, 78, 175);
           }
           .checkbox-container input[type="checkbox"]:checked::before {
             content: '';
@@ -156,7 +173,7 @@ const Statistics2 = () => {
             color: #333;
           }
           .checkbox-container input[type="checkbox"]:hover {
-            background-color: #66bb6a;
+            background-color: rgb(76, 78, 175);
             transform: scale(1.05);
           }
           .checkbox-label {

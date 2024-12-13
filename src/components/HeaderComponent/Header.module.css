@@ -70,8 +70,7 @@
     
 }
 
-/* Стили для адаптивной верстки */
-/* Header styles */
+
 .header {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -135,7 +134,6 @@
     background-color: #e60000;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
@@ -159,7 +157,6 @@
     }
 }
 
-/* Extra Small Screens */
 @media (max-width: 480px) {
     .nav_logo {
         font-size: 20px;
