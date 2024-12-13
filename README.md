@@ -43,26 +43,29 @@
 
 ---
 
-## Картинки и графики
+## Графики статистика отправленных и полученных товаров.
 
-
+<p align="center">
+  <img src="https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика1.png" alt="Аналитика отправленных товаров" width="45%" style="margin-right: 10px;">
+  <img src="https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика2.png" alt="Аналитика полученных товаров" width="45%">
+</p>
 
 ---
 
-## Как начать
+## Как начать работу
 
 1. Клонируйте репозиторий:  
    ```bash
-   git clone https://github.com/your-repo-url
+   git clone https://github.com/ссылка на этот репозиторий
    ```
 
 2. Установите зависимости для мобильного приложения:  
    ```bash
-   cd mobile-app
+   cd hackaton
    npm install
    ```
 
-3. Запустите мобильное приложение:  
+3. Запустите веб-приложение:  
    ```bash
    npm start
    ```
@@ -80,9 +83,9 @@
 
 6. Настройте интеграцию с ERP-системой, следуя инструкциям в **/integration/README.md**.
 
----
+--- На данный момент отсутствует
 
 ## Поддержка и обратная связь
 
-Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу: support@medtehnika.ru.
+Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу: magomedovworkdev@gmail.com.
 
