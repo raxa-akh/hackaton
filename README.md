@@ -45,8 +45,10 @@
 
 ## Графики статистика отправленных и полученных товаров.
 
-![Аналитика отправленных товаров](https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика1.png)
-![Аналитика полученных товаров](https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика2.png)
+<p align="center">
+  <img src="https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика1.png" alt="Аналитика отправленных товаров" width="45%" style="margin-right: 10px;">
+  <img src="https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика2.png" alt="Аналитика полученных товаров" width="45%">
+</p>
 
 ---
 
@@ -85,5 +87,5 @@
 
 ## Поддержка и обратная связь
 
-Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу: нашапочта.
+Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу: magomedovworkdev@gmail.com.
 
