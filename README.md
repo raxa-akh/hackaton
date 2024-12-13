@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Автоматизация адресного хранения на складе медицинского оборудования
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
 
-## Available Scripts
+Этот проект представляет собой систему автоматизации адресного хранения на складе медицинского оборудования для ООО «МЕДТЕХНИКА». Цель проекта — улучшение эффективности работы склада за счёт сокращения времени на поиск товаров, снижения количества ошибок и повышения производительности сотрудников.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Функциональность
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Мобильное приложение для складских сотрудников**
+   — Создано для удобной навигации и учёта позиций на складе.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Веб-панель для руководителей**
+   — Обеспечивает возможность аналитики и управления складскими процессами.
 
-### `npm test`
+3. **Интеграция с ERP-системой 1С**
+   — Автоматическое обновление данных о товарах, их перемещении и учёте.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Аналитика и отчётность**
+   — Возможность создавать отчёты для анализа эффективности складских операций.
 
-### `npm run build`
+5. **Защита данных**
+   — Реализовано разграничение доступа для различных ролей пользователей.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Ключевые выгоды
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Снижение времени на поиск и обработку заказов.
+- Сокращение количества ошибок ручного учёта.
+- Интеграция с текущей ERP-системой без необходимости замены существующего подхода.
+- Гибкость и масштабируемость решения для складов разных размеров.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Структура проекта
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **/mobile-app** — Исходный код мобильного приложения.
+- **/web-panel** — Веб-панель для руководителей.
+- **/integration** — Модуль для интеграции с ERP системой. (На данный момент не реализован. Планируется в ближайшее время).
+- **/analytics** — Инструменты для анализа и отчётов.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Картинки и графики
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Как начать
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Клонируйте репозиторий:  
+   ```bash
+   git clone https://github.com/your-repo-url
+   ```
 
-### Analyzing the Bundle Size
+2. Установите зависимости для мобильного приложения:  
+   ```bash
+   cd mobile-app
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Запустите мобильное приложение:  
+   ```bash
+   npm start
+   ```
 
-### Making a Progressive Web App
+4. Установите зависимости для веб-панели:  
+   ```bash
+   cd ../web-panel
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. Запустите веб-панель:  
+   ```bash
+   npm start
+   ```
 
-### Advanced Configuration
+6. Настройте интеграцию с ERP-системой, следуя инструкциям в **/integration/README.md**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Поддержка и обратная связь
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами по адресу: support@medtehnika.ru.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
