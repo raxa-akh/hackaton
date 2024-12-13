@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.table {
+    width: 900px;
+}
+
 .tableBtn, .modalBtn,.modalBtn1, .buttonHeader{
     background-color: #3d108b;
     color: #FFFFFF;
