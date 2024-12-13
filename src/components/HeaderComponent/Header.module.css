@@ -47,6 +47,7 @@
 .nav_link{
     color: #000000;
     text-decoration: none;
+    margin-right: 10px;
     /* padding: 10px; */
 }
 
@@ -67,4 +68,109 @@
 .nav_btn:hover{
     background-color: #08155b;
     
+}
+
+/* Стили для адаптивной верстки */
+/* Header styles */
+.header {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav_logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.nav_links {
+    display: flex;
+    align-items: center;
+}
+
+.nav_link {
+    margin-right: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav_link:hover {
+    color: #007bff;
+}
+
+.nav_btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav_btn:hover {
+    background-color: #e60000;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_links {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav_link {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav_btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .nav_logo {
+        font-size: 20px;
+    }
+
+    .nav_link {
+        font-size: 14px;
+    }
+
+    .nav_btn {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

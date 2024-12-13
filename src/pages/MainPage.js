@@ -1,11 +1,15 @@
 import Header from "../components/HeaderComponent/Header";
-
+import cls from "../styles/Dashboard.module.css"
 
 function MainPage(){
     return(
-        <div className={''}>
+        <div>
             <Header/>
-            <p title='noooooooo'>433333333</p>
+            <main className={cls.main}>
+                <div className={cls.container}>
+                    <h1>Добро пожаловать!</h1>
+                </div>
+            </main>
         </div>
     )
 }

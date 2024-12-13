@@ -1,6 +1,40 @@
 .modalOptions {
-    width: 250px;
+    width: auto;
+    max-width: 400px;
     height: 200px;
     margin: 0 auto;
     border: 1px red solid;
+}
+
+.modalOptions_item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+.addButton {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 120px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.deleteButton {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 120px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 8px;
 }
