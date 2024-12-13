@@ -6,7 +6,6 @@ import cls from "../styles/Dashboard.module.css"
 import style from '../modal/modalOptions.module.css'
 
 
-
 const Dashboard = () => {
 
     const [selectedLoader, setSelectLoader] = useState([])

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Настраиваем Axios
 const api = axios.create({
-    baseURL: 'https://your-api-url.com',
+    baseURL: 'https://eggvand.pythonanywhere.com/',
     withCredentials: true, // Учитываем CORS
 });
 
@@ -29,6 +29,13 @@ export const logout = async () => {
     await api.post('/logout');
 };
 
+export const goods = async () => {
+    try{  
+        await api.get('/cargo');
+    }catch(e){
+        console.log(e)
+    }
+};
 
 export const registerAdmin = async (registrationData) => {
     const response = await api.post('/register', registrationData);

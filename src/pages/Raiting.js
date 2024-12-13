@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cls from "../styles/Raiting.module.css";
 import Header from "../components/HeaderComponent/Header";
+import { goods } from '../api/authService';
 
 const Raiting = () => {
     const [selectedWarehouse, setSelectedWarehouse] = useState(null);
@@ -53,6 +54,17 @@ const Raiting = () => {
     const handleMouseLeave = () => {
         setHoveredCell(null);
     };
+
+    useEffect(  () => {
+        async function fetchData(){
+                const response = await goods();
+                if(response?.ok){
+                    const data = await response.json();
+                    console.log(data);
+                }
+        }
+        fetchData();
+    },[])
 
     return (
         <div>
