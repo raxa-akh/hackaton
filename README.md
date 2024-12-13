@@ -43,7 +43,7 @@
 
 ---
 
-## Картинки и графики
+## Графики статистика отправленных и полученных товаров.
 
 ![Аналитика отправленных товаров](https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика1.png)
 ![Аналитика полученных товаров](https://github.com/raxa-akh/hackaton/blob/main/src/assets/Аналитика2.png)
